@@ -901,19 +901,21 @@ export const STATIC_NETWORKS_INITIAL_STATE: types.ConfigStaticNetworksState = {
   },
   DEXON: {
     id: 'DEXON',
-    name: 'DEXON Network',
+    name: 'DEXON Testnet',
     unit: 'DXN',
-    chainId: 237,
+    chainId: 238,
     isCustom: false,
     color: '#954a97',
     blockExplorer: makeExplorer({
-      name: 'DEXON Scan',
-      origin: 'https://dexonscan.app',
+      name: 'DEXONSCAN',
+      origin: 'https://testnet.dexonscan.app',
       txPath: 'transaction'
     }),
     tokens: [],
     contracts: [],
+    isTestnet: true,
     dPathFormats: {
+      [SecureWalletName.TREZOR]: DEXON_DEFAULT,
       [SecureWalletName.LEDGER_NANO_S]: DEXON_DEFAULT,
       [InsecureWalletName.MNEMONIC_PHRASE]: DEXON_DEFAULT
     },

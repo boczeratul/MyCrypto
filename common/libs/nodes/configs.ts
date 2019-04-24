@@ -365,7 +365,7 @@ export const NODE_CONFIGS: { [key in StaticNetworkIds]: RawNodeConfig[] } = {
       name: makeNodeName('DEXON', 'dexon'),
       type: 'rpc',
       service: 'dexon.org',
-      url: 'https://mainnet-rpc.dexon.org'
+      url: 'https://testnet-rpc.dexon.org'
     }
   ]
 };

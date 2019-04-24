@@ -70,11 +70,8 @@ export class LedgerWallet extends HardwareWallet {
         const rv = parseInt(v, 16);
         let cv = t._chainId * 2 + 35; // calculated signature v, without signature bit.
         /* tslint:disable no-bitwise */
-        if (rv !== cv && (rv & cv) !== rv) {
-          // (rv !== cv) : for v is truncated byte case
-          // (rv & cv): make cv to truncated byte
-          // (rv & cv) !== rv: signature v bit needed
-          cv += 1; // add signature v bit.
+        if (rv === 0) {
+          cv += 1;
         }
         v = cv.toString(16);
       }
